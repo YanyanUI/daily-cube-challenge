@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Cube Challenge</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Cube Challenge</h1>
+        <p>Welcome to your daily Rubik's Cube practice! Scrambles are generated based on today's date. Solve them all to complete the challenge.</p>
+        
+        <div class="controls">
+            <label for="numScrambles">Number of Scrambles:</label>
+            <select id="numScrambles">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+            </select>
+            <button onclick="generateScrambles()">Generate Today's Scrambles</button>
+        </div>
+        
+        <div id="currentScramble" class="current-scramble">
+            <strong>Current Scramble:</strong> <span id="currentScrambleText">None - Generate scrambles first</span>
+        </div>
+        
+        <div id="scrambles"></div>
+        
+        <div class="timer" id="timer">00:00.00</div>
+        <div style="text-align: center;">
+            <button onclick="resetTimer()">Reset Timer</button>
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #666;">Tip: Press and hold space for inspection (orange), release to start (green). Press and release again to stop (red).</p>
+        
+        <div id="solveLog" class="solve-log" style="display: none;">
+            <h3>Solve History</h3>
+            <div id="solveList"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>  <!-- For seeded random -->
+</body>
+</html>
